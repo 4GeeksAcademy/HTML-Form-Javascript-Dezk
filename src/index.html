@@ -1,29 +1,113 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
-  </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML5 Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <form id="myForm">
+    <div class="container">
+      <div class="card mt-5">
+        <div class="card-header">
+          <h5 class="card-title">Payment form example</h5>
+        </div>
+        <div class="card-body row g-3">
+          <div id="invalid" class="col-md-12" style="display: none;">
+            <div class="p-3 text-danger-emphasis bg-danger-subtle border border-danger-subtle rounded-3">
+              Some fields are missing
+            </div>
+          </div>
+          <div class="col-md-5">
+            <label for="card" class="form-label">Card #</label>
+            <input type="number" class="form-control" id="card" name="card" placeholder="XXXX-XXXX-XXXX-XXXX"
+              maxlength="16" minlength="16" />
+          </div>
+          <div class="col-md-3">
+            <label for="cvc" class="form-label">CVC #</label>
+            <input type="number" class="form-control" id="cvc" name="cvc" placeholder="0000" maxlength="4" minlength="4"
+              min="0000" max="9999" />
+          </div>
+          <div class="col-md-4">
+            <label for="amount" class="form-label">Amount</label>
+            <div class="input-group">
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" />
+          </div>
+          <div class="col-md-6">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" />
+          </div>
+          <div class="col-md-6">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" name="city" />
+          </div>
+          <div class="col-md-3">
+            <label for="state" class="form-label">State</label>
+            <select class="form-select" id="state" name="state">
+              <option selected disabled value="">Pick a state</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="postalcode" class="form-label">Postal Code</label>
+            <input type="text" class="form-control" id="postalcode" name="postalcode" />
+          </div>
+          <div class="col-md-6">
+            <label for="validationDefault03" class="form-label">We accept:</label>
+            <br />
+            <div class="btn btn-secondary">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="method" id="inlineRadio1" value="option1" checked />
+                <label class="form-check-label" for="inlineRadio1"><i class="fa-brands fa-cc-mastercard"></i></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="method" id="inlineRadio2" value="option2" />
+                <label class="form-check-label" for="inlineRadio2"><i class="fa-brands fa-cc-visa"></i></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="method" id="inlineRadio3" value="option3" />
+                <label class="form-check-label" for="inlineRadio3"><i class="fa-brands fa-cc-diners-club"></i></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="method" id="inlineRadio4" value="option4" />
+                <label class="form-check-label" for="inlineRadio4"><i class="fa-brands fa-cc-amex"></i></label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+            <p class="text-body-secondary fw-lighter">Add any notes here.</p>
+          </div>
+        </div>
+        <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" class="btn btn-secondary me-md-2">
+            Cancel
+          </button>
+          <button id="send" type="submit" class="btn btn-primary">
+            Send
+          </button>
+        </div>
       </div>
     </div>
-  </body>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="./src/app.js"></script>
+</body>
+
 </html>

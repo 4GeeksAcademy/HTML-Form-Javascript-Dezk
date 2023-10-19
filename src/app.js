@@ -1,11 +1,33 @@
 /* eslint-disable */
-import "bootstrap";
+//import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+const form = document.querySelector("#myForm");
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const elementsToCheck = [
+    "card",
+    "cvc",
+    "amount",
+    "firstname",
+    "lastname",
+    "city",
+    "state",
+    "postalcode",
+    "message"
+  ];
+
+  for (const elementName of elementsToCheck) {
+    const element = e.target[elementName];
+    const invalid = document.querySelector("#invalid");
+
+    if (element.value === "") {
+      invalid.style.display = "block";
+      element.classList.add("is-invalid");
+    } else {
+      element.classList.remove("is-invalid");
+    }
+  }
+});
